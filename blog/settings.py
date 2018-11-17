@@ -15,7 +15,7 @@ SECRET_KEY = 'j=5_3f*mivhu%acq&#r7$f_=mhkjn^=1t!f+z*1q3(r^c-vpe+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aliblog.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['babablog.herokuapp.com','127.0.0.1']
 
 
 # Application definition
