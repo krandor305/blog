@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j=5_3f*mivhu%acq&#r7$f_=mhkjn^=1t!f+z*1q3(r^c-vpe+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['babablog.herokuapp.com','127.0.0.1']
 
