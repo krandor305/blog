@@ -10,8 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j=5_3f*mivhu%acq&#r7$f_=mhkjn^=1t!f+z*1q3(r^c-vpe+'
-
+SECRET_KEY = '!4yewg_24qy*yn+x@l#k=(mq&!0wbo!zokljx81lxb44vq!8qi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -91,9 +90,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-)
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -122,7 +119,7 @@ STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'blog/static/'),
 )
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/' faire attention a ca!!!
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
