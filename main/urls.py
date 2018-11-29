@@ -18,4 +18,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
+    path('ajoutarticle',views.ajoutarticle),
+    path('modifarticle/<slug:slug>',views.modifierarticle),
+    path('suprimmerarticle/<slug:slug>',views.supprimerarticle),
+    path('moncompte',views.moncompte),
 ]
