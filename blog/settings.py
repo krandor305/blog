@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!4yewg_24qy*yn+x@l#k=(mq&!0wbo!zokljx81lxb44vq!8qi'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["babablog.herokuapp.com","127.0.0.1"]
 
