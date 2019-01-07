@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block header%}
+{%endblock header%}
+{%block content%}
+<a href="/article/{{article.pk}}/ajoutparagraphe">ajout paragraphe</a>
+<form method="post">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit">
+</form>
+{%endblock content%}

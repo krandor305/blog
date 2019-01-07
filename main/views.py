@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import AjoutarticleForm
 from .models import Article
-from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound,HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 
@@ -10,16 +10,15 @@ def index(request):
     return render(request,'main/index.html',{"articles":articles})
 
 def ajoutarticle(request):
-    if request.user.is_authenticated:
-        form=AjoutarticleForm()
-        if request.method=='POST':
-            form=AjoutarticleForm(request.POST)
-            if form.is_valid():
+    form=AjoutarticleForm()
+    if request.method=='POST':
+        form=AjoutarticleForm(request.POST)
+        if form.is_valid():
+            if request.user.is_authenticated:
                 form.instance.utilisateur=request.user
-                form.save()
-        return render(request,'main/ajoutarticle.html',{"form":form})
-    else:
-        return HttpResponseNotFound("<h1>La page n'a pas été trouvée</h1>")
+            form.save()
+            return HttpResponseRedirect("/")
+    return render(request,'main/ajoutarticle.html',{"form":form})
 
 def supprimerarticle(request,slug):
     if request.user.is_authenticated:
@@ -37,7 +36,7 @@ def modifierarticle(request,slug):
                 if form.is_valid():
                     form.instance.utilisateur=request.user
                     form.save()
-            return render(request,'main/ajoutarticle.html',{"form":form})
+            return render(request,'main/modifarticle.html',{"form":form,"article":article})
         else:
             return HttpResponseNotFound("<h1>La page n'a pas été trouvée</h1>")
     except Article.DoesNotExist:
